@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  padding: 20px 30px;
+  background-color: var(--background-theme);
+  scroll-behavior: smooth;
+  transition: all 0.6s ease-in;
+}
+
+:root {
+  --big-desktop-font-size: 32px;
+  --laptop-font-size: 24px;
+  --tablet-font-size: 20px;
+  --low-resolution-tablet-font-size: 18px;
+  --small-device-font-size: 13px;
+}
+
+.light-mode {
+  --title-color: rgb(15, 15, 15);
+  --background-theme: #fff;
+  --btn-background: rgb(15, 15, 15);
+  --btn-color: #fff;
+  --heading-color: rgb(15, 15, 15);
+  --todo-bg-color: #726a95;
+  --todo-text-color: #fff;
+  --todo-category-bgcolor: rgb(15, 15, 15);
+  --todo-category-color: #fff;
+  --icon-color: #fff;
+  --label-text-color: rgb(15, 15, 15);
+  --footer-arrow-bgColor: #fff;
+  --footer-arrow-color: rgb(15, 15, 15);
+  --todo-form-bg-color: #fff;
+  --todo-form-border: 1px solid black;
+}
+
+.dark-mode {
+  --title-color: #fff;
+  --background-theme: rgb(15, 15, 15);
+  --btn-background: #fff;
+  --btn-color: rgb(15, 15, 15);
+  --heading-color: #fff;
+  --todo-bg-color: #fff;
+  --todo-text-color: rgb(15, 15, 15);
+  --todo-category-bgcolor: rgb(15, 15, 15);
+  --todo-category-color: #fff;
+  --icon-color: rgb(15, 15, 15);
+  --label-text-color: #fff;
+  --footer-arrow-bgColor: #fff;
+  --footer-arrow-color: rgb(15, 15, 15);
+  --todo-form-bg-color: rgb(15, 15, 15);
+  --todo-form-border: 1px solid white;
+}
+
+.icon {
+  height: 27px;
+  width: 27px;
+  color: var(--icon-color);
+  cursor: pointer;
+}
+
+.red {
+  color: #ff6464;
+}
+
+.green {
+  color: #60e550;
+}
+
+.blue {
+  color: #8dc6ff;
+}
