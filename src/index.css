@@ -30,7 +30,7 @@ body {
   --todo-text-color: #fff;
   --todo-category-bgcolor: rgb(15, 15, 15);
   --todo-category-color: #fff;
-  --icon-color: #fff;
+  /* --icon-color: #fff; */
   --label-text-color: rgb(15, 15, 15);
   --footer-arrow-bgColor: #fff;
   --footer-arrow-color: rgb(15, 15, 15);
@@ -48,7 +48,7 @@ body {
   --todo-text-color: rgb(15, 15, 15);
   --todo-category-bgcolor: rgb(15, 15, 15);
   --todo-category-color: #fff;
-  --icon-color: rgb(15, 15, 15);
+  /* --icon-color: rgb(15, 15, 15); */
   --label-text-color: #fff;
   --footer-arrow-bgColor: #fff;
   --footer-arrow-color: rgb(15, 15, 15);
@@ -61,6 +61,10 @@ body {
   width: 27px;
   color: var(--icon-color);
   cursor: pointer;
+}
+
+.white {
+  color: #fff;
 }
 
 .red {
