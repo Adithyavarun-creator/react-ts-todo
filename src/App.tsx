@@ -151,8 +151,8 @@ const App = () => {
   const deleteTodo = (id: string) => {
     const deleted = allTodos.filter((t: any) => t.id !== id);
     setAllTodos(deleted);
-    localStorage.setItem("todos", JSON.stringify(deleted))
     window.location.reload()
+    localStorage.setItem("todos", JSON.stringify(deleted))
   }
 
 
