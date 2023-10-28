@@ -57,7 +57,9 @@ const App = () => {
   useEffect(() => {
     if (localStorage.getItem("todos")) {
       const storedList = JSON.parse(localStorage.getItem("todos") || '{}');
-      setAllTodos(storedList.sort((a: any, b: any) => a - b).reverse());
+      setAllTodos(storedList.reverse());
+
+
     }
   }, [])
 
@@ -84,7 +86,6 @@ const App = () => {
   //adding and updating a todo
   const addAndUpdateTodo = (e: any) => {
     e.preventDefault()
-    window.scrollTo(0, 1000)
 
 
     if (!text) {
@@ -115,6 +116,11 @@ const App = () => {
       setDisable(false)
 
     } else {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
       setDisable(true)
       const newTodo: Todo = {
         id: uuidv4(), text: text,
@@ -184,7 +190,7 @@ const App = () => {
   }
 
 
-  //console.log(allTodos);
+  console.log(getCategory);
 
 
 
@@ -259,7 +265,7 @@ const App = () => {
         <div>
           {
             getCategory && <div className='all-todo-textbox'>
-              <h1 className='header-title'>{getCategory?.length} results for your filter</h1>
+              <h1 className='header-title'>{getCategory?.length === 1 ? `1 result for ${getCategory?.category ? getCategory?.category : getCategory[0].category}` : `${getCategory?.length} results for ${getCategory[0].category}`}</h1>
             </div>
           }
           {
