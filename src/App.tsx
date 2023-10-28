@@ -28,6 +28,7 @@ export interface Todo {
 
 const App = () => {
 
+
   //add todotext and todocategory
   const [text, setText] = useState<any | null>("");
   const [category, setCategory] = useState<any | null>("");
@@ -56,7 +57,7 @@ const App = () => {
   useEffect(() => {
     if (localStorage.getItem("todos")) {
       const storedList = JSON.parse(localStorage.getItem("todos") || '{}');
-      setAllTodos(storedList);
+      setAllTodos(storedList.sort((a: any, b: any) => a - b).reverse());
     }
   }, [])
 
@@ -72,7 +73,10 @@ const App = () => {
   const filterTodos = (cat: string) => {
     const updatedcategories = allTodos.filter((c: any) => c.category === cat)
     setGetCategory(updatedcategories)
+    window.scrollTo(0, 400)
   }
+
+
 
 
 
@@ -80,10 +84,15 @@ const App = () => {
   //adding and updating a todo
   const addAndUpdateTodo = (e: any) => {
     e.preventDefault()
+    window.scrollTo(0, 1000)
+
+
     if (!text) {
       toast.error("Please enter your Title of Todo")
+      setDisable(false)
     } if (!category) {
       toast.error("Please enter your Category of Todo")
+      setDisable(false)
     } else if (text && category && isEditing) {
       //updating a todo
       setDisable(true)
@@ -117,12 +126,18 @@ const App = () => {
       toast('Good Job! Todo Added', {
         icon: '👏',
       });
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
       setCategory('')
       setText('')
       setToggle(false)
       setDisable(false)
     }
   }
+
 
 
 
@@ -234,7 +249,7 @@ const App = () => {
           {
             getAllCategories && getAllCategories.map((c, index: number) => (
               <Fragment key={index} >
-                <button className='addtodo-button' onClick={() => filterTodos(c)}>{c}</button>
+                <button className='category-filter' onClick={() => filterTodos(c)}>{c}</button>
               </Fragment>
             ))
           }
@@ -244,47 +259,11 @@ const App = () => {
         <div>
           {
             getCategory && <div className='all-todo-textbox'>
-              <h1 className='header-title'>Your filtered Todo List</h1>
+              <h1 className='header-title'>{getCategory?.length} results for your filter</h1>
             </div>
           }
           {
             getCategory && getCategory.map((c: any, index: number) => (
-              // <motion.div
-              //   initial={{ opacity: 0 }}
-              //   animate={{ opacity: 1 }}
-              //   transition={{ duration: 0.7 }}
-              //   className='todo-boxesize' key={index} >
-              //   <div className="todo-box">
-              //     <div className='todo-datebox'>
-              //       <BiSolidCategoryAlt className='icon' />
-              //       <span className='todo-category'>{c.category}</span>
-              //     </div>
-              //     <div className='todo-datebox'>
-              //       {/* <BsPencilSquare className='icon' /> */}
-              //       <span className='todo-text'>👉 {c.text}</span>
-              //     </div>
-              //     <div className='todo-datebox'>
-              //       <BsFillCalendar2CheckFill className='icon' />
-              //       <span className='todo-date'>{moment(new Date(c.createdAt)).format("MMMM Do YYYY, h:mm:ss a")}</span>
-              //     </div>
-              //   </div>
-
-
-              //   <div className="alter-icons">
-              //     <div>
-              //       <span className='edit-btn' onClick={() => copyFunction(c.text)}><BiCopyAlt className='white' title='Copy' /></span>
-              //     </div>
-              //     <div>
-              //       <span className='edit-btn' onClick={() => shareFunction(c.text)}><RiShareForwardLine className='blue' title='Share' /></span>
-              //     </div>
-              //     <div>
-              //       <span className='edit-btn' onClick={() => editTodo(c.id)}><FiEdit className='green' title='Edit' /></span>
-              //     </div>
-              //     <div>
-              //       <span className='delete-btn' onClick={() => deleteTodo(c.id)}><RiDeleteBin6Line className='red' title='Delete' /></span>
-              //     </div>
-              //   </div>
-              // </motion.div>
               <Fragment key={c.id}>
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -331,11 +310,12 @@ const App = () => {
 
 
       <div className='all-todo-textbox'>
-        <h1 className='header-title'>Your complete Todo List</h1>
+        <h1 className='todo-length'>Your complete Todo List</h1>
       </div>
 
 
-      <div className='todo-box-container'>
+      <div
+        className='todo-box-container'>
         {!allTodos.length
           ? <h1 className='todo-length'>😥😥No Todos added here😥😥</h1> :
           <>
@@ -355,7 +335,7 @@ const App = () => {
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ duration: 0.7 }}
+                      transition={{ duration: 1.7 }}
                       className='todo-boxes'>
                       <div className="todo-box">
                         <div className='todo-datebox'>

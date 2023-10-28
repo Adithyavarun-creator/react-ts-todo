@@ -228,11 +228,41 @@
   .btn-center {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
 
-  .category-btn {
+  .category-filter {
+    padding: 14px 18px;
+    font-size: var(--big-desktop-font-size);
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .addtodo-button {
+    padding: 14px 18px;
+    font-size: var(--big-desktop-font-size);
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+
+  /* .category-btn {
     padding: 12px 18px;
     font-size: 28px;
     background-color: var(--btn-background);
@@ -241,7 +271,7 @@
     outline: none;
     border-radius: 10px;
     text-decoration: none;
-  }
+  } */
 
   .all-todo-textbox {
     margin-top: 30px;
@@ -471,13 +501,25 @@
   .btn-center {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
   }
 
-  .category-btn {
-    padding: 12px 18px;
-    font-size: 28px;
+  .category-filter {
+    padding: 10px 14px;
+    font-size: var(--laptop-font-size);
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .addtodo-button {
+    padding: 14px 18px;
+    font-size: var(--laptop-font-size);
     background-color: var(--btn-background);
     color: var(--btn-color);
     cursor: pointer;
@@ -502,7 +544,7 @@
   ##Screen = B/w 768px to 1024px
 */
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .header-content {
     display: flex;
     flex-direction: column;
@@ -560,10 +602,28 @@
     justify-content: center;
     gap: 10px;
   }
+  .btn-center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .category-filter {
+    padding: 12px 10px;
+    font-size: 16px;
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    text-decoration: none;
+  }
 
   .addtodo-button {
-    padding: 12px 18px;
-    font-size: 20px;
+    padding: 12px 10px;
+    font-size: 18px;
     background-color: var(--btn-background);
     color: var(--btn-color);
     cursor: pointer;
@@ -708,13 +768,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    justify-content: center;
-  }
-
-  .btn-center {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
     justify-content: center;
   }
 
@@ -922,8 +975,8 @@
   }
 
   .icon {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     color: var(--icon-color);
     cursor: pointer;
   }
@@ -960,13 +1013,25 @@
   .btn-center {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
 
-  .category-btn {
-    padding: 12px 18px;
-    font-size: 28px;
+  .category-filter {
+    padding: 8px 12px;
+    font-size: var(--low-resolution-tablet-font-size);
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .addtodo-button {
+    padding: 12px 14px;
+    font-size: var(--low-resolution-tablet-font-size);
     background-color: var(--btn-background);
     color: var(--btn-color);
     cursor: pointer;
@@ -996,12 +1061,12 @@
     flex-direction: column;
     gap: 40px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 30px;
   }
 
   .header-title {
-    font-size: 23px;
+    font-size: 18px;
     font-weight: bolder;
     color: var(--heading-color);
     text-align: center;
@@ -1070,7 +1135,7 @@
   .search-box-input {
     width: 80%;
     height: 40px;
-    font-size: var(--tablet-font-size);
+    font-size: var(--small-device-font-sizee);
     outline: none;
     padding: 14px 12px;
     border-radius: 20px;
@@ -1088,7 +1153,7 @@
   .todo-box-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     cursor: pointer;
   }
 
@@ -1109,7 +1174,6 @@
     color: var(--todo-text-color);
     padding: 20px;
     border-radius: 15px;
-    margin-top: 30px;
   }
 
   .todo-boxesize {
@@ -1117,7 +1181,7 @@
     flex-direction: column;
     /* justify-content: space-between; */
     column-gap: 40px;
-    row-gap: 30px;
+    row-gap: 10px;
     background-color: var(--todo-bg-color);
     color: var(--todo-text-color);
     padding: 15px;
@@ -1127,7 +1191,7 @@
   }
 
   .all-todo {
-    font-size: var(--low-resolution-tablet-font-size);
+    font-size: var(--small-device-font-sizee);
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -1195,7 +1259,7 @@
 
   .todo-length {
     text-align: center;
-    font-size: var(--low-resolution-tablet-font-size);
+    font-size: var(--small-device-font-sizee);
     margin-bottom: 30px;
   }
 
@@ -1209,13 +1273,25 @@
   .btn-center {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
   }
 
-  .category-btn {
-    padding: 12px 18px;
-    font-size: 28px;
+  .category-filter {
+    padding: 6px 10px;
+    font-size: var(--small-device-font-sizee);
+    background-color: var(--btn-background);
+    color: var(--btn-color);
+    cursor: pointer;
+    outline: none;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+
+  .addtodo-button {
+    padding: 8px 12px;
+    font-size: var(--small-device-font-sizee);
     background-color: var(--btn-background);
     color: var(--btn-color);
     cursor: pointer;
