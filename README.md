@@ -1,6 +1,6 @@
 # React Todo List Application
 
-## What is been used in this repository
+## What is been created in this repository
 
 This project is a React Todo List Application
 
@@ -9,9 +9,11 @@ This project is a React Todo List Application
 3. Handling CRUD operations of each Todos
 4. Generating List of Todo
 5. Light and Dark mode UI with basic CSS
-6. Searching a specific todo with search box
-7. Having a category filter to categorize nad view the list of todos with specific category
-8. Unit Tests for the main App component
+6. Framer Motion for little animations in todo list
+7. Searching a specific todo with search box
+8. Clicking on a specific category to get list of todos with specific category
+9. Unit Tests for the main App component
+10. Deployed in Vercel
 
 ## Live Application URL
 
@@ -28,12 +30,6 @@ Install create-react-app npm package globally. This will help to easily run the 
 ```bash
 npx create-react-app my-app --template typescript
 ```
-
-## Live Application URL
-
-The Project is deployed in https://github.com/Adithyavarun-creator/react-ts-todo
-
-Click on the link to see the application
 
 ## Cloning and Running the Application in local
 
