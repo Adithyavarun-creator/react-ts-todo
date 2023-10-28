@@ -240,7 +240,7 @@ const App = () => {
 
       <div>
         {allTodos.length ? <h1 className='todo-length'>⚡⚡There are totally {allTodos?.length === 1 ? `${allTodos.length} todo` : `${allTodos.length} todos`}  you have created⚡⚡</h1>
-          : <h1 className='todo-length'>Please create your todos</h1>
+          : <h1 className='todo-length'>Please create your todos 📔 ✍🏼</h1>
         }
       </div>
 
