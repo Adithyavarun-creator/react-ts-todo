@@ -7,13 +7,14 @@ This project is a React Todo List Application
 1. Creating a Components in React
 2. Saving todo in localStorage
 3. Handling CRUD operations of each Todos
-4. Generating List of Todo
-5. Light and Dark mode UI with basic CSS
-6. Framer Motion for little animations in todo list
-7. Searching a specific todo with search box
-8. Clicking on a specific category to get list of todos with specific category
-9. Unit Tests for the main App component
-10. Deployed in Vercel
+4. Deleting all todos in single click
+5. Generating List of Todo
+6. Light and Dark mode UI with basic CSS
+7. Framer Motion for little animations in todo list
+8. Searching a specific todo with search box
+9. Clicking on a specific category to get list of todos with specific category
+10. Unit Tests for the main App component
+11. Deployed in Vercel
 
 ## Live Application URL
 
