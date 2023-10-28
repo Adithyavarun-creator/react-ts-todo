@@ -239,7 +239,7 @@ const App = () => {
 
 
       <div>
-        {allTodos ? <h1 className='todo-length'>⚡⚡There are totally {allTodos?.length === 1 ? `${allTodos.length} todo` : `${allTodos.length} todos`}  you have created⚡⚡</h1>
+        {allTodos.length ? <h1 className='todo-length'>⚡⚡There are totally {allTodos?.length === 1 ? `${allTodos.length} todo` : `${allTodos.length} todos`}  you have created⚡⚡</h1>
           : <h1 className='todo-length'>Please create your todos</h1>
         }
       </div>
@@ -318,7 +318,7 @@ const App = () => {
 
 
       <div className='all-todo-textbox'>
-        {!allTodos ? "" : <h1 className='todo-length'>Your complete Todo List</h1>}
+        {allTodos.length === 0 ? "" : <h1 className='todo-length'>Your complete Todo List</h1>}
       </div>
 
 
