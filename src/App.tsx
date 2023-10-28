@@ -239,7 +239,9 @@ const App = () => {
 
 
       <div>
-        <h1 className='todo-length'>⚡⚡There are totally {allTodos.length === 1 ? `${allTodos.length} todo` : `${allTodos.length} todos`}  you have created⚡⚡</h1>
+        {allTodos ? <h1 className='todo-length'>⚡⚡There are totally {allTodos?.length === 1 ? `${allTodos.length} todo` : `${allTodos.length} todos`}  you have created⚡⚡</h1>
+          : <h1 className='todo-length'>Please create your todos</h1>
+        }
       </div>
 
       <div className='search-box'>
@@ -316,14 +318,14 @@ const App = () => {
 
 
       <div className='all-todo-textbox'>
-        <h1 className='todo-length'>Your complete Todo List</h1>
+        {!allTodos ? "" : <h1 className='todo-length'>Your complete Todo List</h1>}
       </div>
 
 
       <div
         className='todo-box-container'>
         {!allTodos.length
-          ? <h1 className='todo-length'>😥😥No Todos added here😥😥</h1> :
+          ? <h1 className='todo-length'>😥😥No Todos added😥😥</h1> :
           <>
             {
               allTodos && allTodos.filter((result: Todo) => {

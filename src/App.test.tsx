@@ -21,7 +21,7 @@ test('check form element in header', () => {
 
 
 
-
+//this thing worked for me but as I had a lengthy placeholder, I was not able to pass the test
 // test('category should not be empty', () => {
 //   render(<App />);
 //   const inputCategory = screen.getByPlaceholderText(/Enter category of Todo/i);
