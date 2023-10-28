@@ -267,7 +267,7 @@ const App = () => {
         <div>
           {
             getCategory && <div className='all-todo-textbox'>
-              {!getCategory.length === 0 ? "" : <h1 className='header-title'>{getCategory?.length === 1 ? `1 result for ${getCategory?.category ? getCategory?.category : getCategory[0].category}` : `${getCategory?.length} results for ${getCategory[0].category}`}</h1>
+              {!getCategory ? "" : <h1 className='header-title'>{getCategory?.length === 1 ? `1 result for ${getCategory?.category ? getCategory?.category : getCategory[0].category}` : `${getCategory?.length} results for ${getCategory[0].category}`}</h1>
               }            </div>
           }
           {
