@@ -7,7 +7,7 @@ import { FiEdit } from 'react-icons/fi'
 import moment from 'moment'
 import Footer from './components/Footer/Footer';
 import { motion } from 'framer-motion'
-import { RiDeleteBin6Line, RiShareForwardLine } from 'react-icons/ri'
+import { RiDeleteBin6Line } from 'react-icons/ri'
 import { BsFillCalendar2CheckFill } from 'react-icons/bs'
 import { BiSolidCategoryAlt, BiCopyAlt } from 'react-icons/bi'
 import { MdShare } from 'react-icons/md'
@@ -57,9 +57,7 @@ const App = () => {
   useEffect(() => {
     if (localStorage.getItem("todos")) {
       const storedList = JSON.parse(localStorage.getItem("todos") || '{}');
-      setAllTodos(storedList.reverse());
-
-
+      setAllTodos(storedList);
     }
   }, [])
 
@@ -156,6 +154,14 @@ const App = () => {
   }
 
 
+  //delete all your todos
+  const deleteAlltodo = () => {
+    localStorage.removeItem("todos");
+    toast('Deleted all Todos !');
+    setAllTodos([])
+  }
+
+
   //editing a todo
   const editTodo = (id: string) => {
     const edited = allTodos.find((t: any) => t.id === id);
@@ -248,6 +254,7 @@ const App = () => {
         {allTodos.length ? <h1 className='todo-length'>⚡⚡There are totally {allTodos?.length === 1 ? `${allTodos.length} todo` : `${allTodos.length} todos`}  you have created⚡⚡</h1>
           : <h1 className='todo-length'>Please create your todos 📔 ✍🏼</h1>
         }
+
       </div>
 
       <div className='search-box'>
@@ -255,6 +262,12 @@ const App = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className='search-box-input' placeholder='Search specific Todo by typing category/name' />
+      </div>
+
+      <div className='center'>
+        {allTodos.length === 0 ? '' :
+          <button className='addtodo-button' onClick={deleteAlltodo}>🗑️Remove all Todos</button>
+        }
       </div>
 
 

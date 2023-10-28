@@ -1,7 +1,7 @@
 import './Footer.css'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 
-const Footer = ({ }) => {
+const Footer = () => {
 
     const scrollTop = () => {
         window.scrollTo({

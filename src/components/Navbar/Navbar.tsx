@@ -9,6 +9,7 @@ const Navbar = () => {
     const toggleTheme = () => {
         if (theme === 'dark-mode') {
             setTheme('light-mode')
+
         } else {
             setTheme('dark-mode')
         }

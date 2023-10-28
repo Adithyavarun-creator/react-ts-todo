@@ -78,3 +78,9 @@ body {
 .blue {
   color: #8dc6ff;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
