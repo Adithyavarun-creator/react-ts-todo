@@ -158,6 +158,7 @@ const App = () => {
   const deleteAlltodo = () => {
     localStorage.removeItem("todos");
     toast('Deleted all Todos !');
+    window.scrollTo(0, 0)
     setAllTodos([])
   }
 
