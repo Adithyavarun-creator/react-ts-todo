@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# React Todo List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is been used in this repository
 
-## Available Scripts
+This project is a React Todo List Application
 
-In the project directory, you can run:
+1. Creating a Components in React
+2. Saving todo in localStorage
+3. Handling CRUD operations of each Todos
+4. Generating List of Todo
+5. Light and Dark mode UI with basic CSS
+6. Searching a specific todo with search box
+7. Having a category filter to categorize nad view the list of todos with specific category
+8. Unit Tests for the main App component
 
-### `npm start`
+## Live Application URL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### https://react-ts-todo-tau.vercel.app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This URL has the application deployed in Vercel as per instructions
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### create a react application using npx create-react-app -my-todo --template-typescript
 
-### `npm run build`
+Install create-react-app npm package globally. This will help to easily run the project and also build the source files easily. Use the following command to install create-react-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npx create-react-app my-app --template typescript
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Live Application URL
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Project is deployed in https://github.com/Adithyavarun-creator/react-ts-todo
 
-### `npm run eject`
+Click on the link to see the application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Cloning and Running the Application in local
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the project into local
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Install all the npm packages. Go into the project folder and type the following command to install all npm packages
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+In order to run the application Type the following command
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Application Runs on **localhost:3000**
+
+## Application design
+
+#### Components
+
+1. **Navbar** Component : This Component supports only for light and dark mode feature for the whole application and the mode features are simplified with CSS
+
+2. **App** Component : This is the main Component that handles all CRUD operations of a Todo.Each of the CRUD oeprations are commented with desired for which is performing the create/read/update/delete operations. Each todoes when they are created are saved in your browser's localStorage for saving your datas quickly instead of saving in an external backend server, the only thing to do while fetching is to parse and stringify the data that is stored in localeStorage. There is a form to evaluate the inputs are been filled and not filled while submitting . The errors and success messages are showed in a toast message at center of the webpage once submitted or updated.
+
+3. **Footer** Component : This Component contains an top arrow icon in the bottom to scroll at top of the page when you have more or multipls todo list
+
+#### Routes
+
+The application does not have a react-router-dom routing as this is a simple basic CRUD operations with localeStorage
+
+## Resources
+
+**create-react-app** : The following link has all the commands that can be used with create-react-app
+https://github.com/facebook/create-react-app
+
+**ReactJS** : Refer to https://reactjs.org/ to understand the concepts of ReactJS
+
+## Unit Testing
+
+There are 6 testing features in which 3 worked out well and rest had some typescript errors for getbytestid but in normal react jsx it worked perfectly but in react tsx it was not running it successfully so I have commented it in App.test.tsx file

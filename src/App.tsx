@@ -152,7 +152,7 @@ const App = () => {
     const deleted = allTodos.filter((t: any) => t.id !== id);
     setAllTodos(deleted);
     localStorage.setItem("todos", JSON.stringify(deleted))
-
+    window.location.reload()
   }
 
 
@@ -190,7 +190,7 @@ const App = () => {
   }
 
 
-  console.log(getCategory);
+  //console.log(getCategory);
 
 
 
@@ -218,7 +218,10 @@ const App = () => {
             <label className='addtodo-label' htmlFor="category">Category</label>
             <input className='addtodo-input'
               placeholder="Enter the category of Todo"
-              name='category' type="text" id='category' value={category} onChange={(e) => setCategory(e.target.value)} required />
+              name='category' type="text" id='category' value={category}
+              data-testid='add-input'
+              onChange={(e) => setCategory(e.target.value)}
+              required />
           </div>
           <div className='addtodo-fields'>
             <label className='addtodo-label' htmlFor="text">Todo Title</label>
@@ -230,7 +233,10 @@ const App = () => {
             <button className='addtodo-button' onClick={() => setToggle(false)}>
               Cancel
             </button>
-            <button className='addtodo-button' onClick={addAndUpdateTodo} disabled={disable}>
+            <button className='addtodo-button' onClick={addAndUpdateTodo} disabled={disable}
+              data-testid='add-button-form'
+
+            >
               {isEditing ? 'Save Changes' : 'Save'}
             </button>
           </div>
