@@ -267,8 +267,8 @@ const App = () => {
         <div>
           {
             getCategory && <div className='all-todo-textbox'>
-              <h1 className='header-title'>{getCategory?.length === 1 ? `1 result for ${getCategory?.category ? getCategory?.category : getCategory[0].category}` : `${getCategory?.length} results for ${getCategory[0].category}`}</h1>
-            </div>
+              {!getCategory.length ? "" : <h1 className='header-title'>{getCategory?.length === 1 ? `1 result for ${getCategory?.category ? getCategory?.category : getCategory[0].category}` : `${getCategory?.length} results for ${getCategory[0].category}`}</h1>
+              }            </div>
           }
           {
             getCategory && getCategory.map((c: any, index: number) => (
