@@ -67,7 +67,7 @@ The application does not have a react-router-dom routing as this is a simple bas
 ## Resources
 
 **create-react-app** : The following link has all the commands that can be used with create-react-app
-https://github.com/facebook/create-react-app
+https://github.com/Adithyavarun-creator/react-ts-todo
 
 **ReactJS** : Refer to https://reactjs.org/ to understand the concepts of ReactJS
 
